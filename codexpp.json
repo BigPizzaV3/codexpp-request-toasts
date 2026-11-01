@@ -1,0 +1,50 @@
+{
+  "id": "request-toasts",
+  "name": "请求滚动提示",
+  "version": "0.1.0",
+  "description": "每完成一次模型请求，就在 Codex 右下角弹出一条提示（模型、耗时、供应商、token、成败），新的从下面顶上来，旧的逐渐变淡消失。",
+  "engines": {
+    "codexpp": 1
+  },
+  "renderer": [
+    "renderer.js"
+  ],
+  "permissions": {
+    "routes": [
+      "/request-log/recent"
+    ]
+  },
+  "config": {
+    "lifetimeSeconds": {
+      "type": "number",
+      "title": "每条停留时长（秒）",
+      "description": "到时间后淡出消失",
+      "default": 8,
+      "min": 2,
+      "max": 60
+    },
+    "maxVisible": {
+      "type": "number",
+      "title": "最多同时显示几条",
+      "description": "超出时最上面一条提前淡出",
+      "default": 5,
+      "min": 1,
+      "max": 10
+    },
+    "bottomOffset": {
+      "type": "number",
+      "title": "距窗口底部（像素）",
+      "default": 96,
+      "min": 0,
+      "max": 600
+    },
+    "rightOffset": {
+      "type": "number",
+      "title": "距窗口右侧（像素）",
+      "default": 18,
+      "min": 0,
+      "max": 600
+    }
+  },
+  "repository": "BigPizzaV3/codexpp-request-toasts"
+}
